@@ -4,11 +4,12 @@ class Card extends Component {
 
 
   render() {
-    const abstract = this.props.children
-    console.log(abstract);
+    const news = this.props.children
     return(
       <div>
-        <p>{abstract}</p>
+        <h4>{news.section_name}</h4>
+        <h3>{news.abstract}</h3>
+        <p>{news.lead_paragraph}</p>
       </div>
     )
   }

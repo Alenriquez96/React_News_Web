@@ -10,9 +10,9 @@ class Main extends Component {
       <main>
         <h1>News React</h1>
         <Routes>
-          <Route element={<Home></Home> }path="/home"></Route>
-          <Route element={<Form></Form>}path="/form"></Route>
-          <Route element={<ListNews></ListNews>}path="/list"></Route>
+          <Route element={<Home/> }path="/home"></Route>
+          <Route element={<Form/>}path="/form"></Route>
+          <Route element={<ListNews/>}path="/list"></Route>
         </Routes>
       </main>
     )

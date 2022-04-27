@@ -24,15 +24,12 @@ class ListNews extends Component {
   render() {
     return (
       <section>
-        <h2>News List</h2>
         {
           this.state.ListNews.map((news,i) => 
           //  { for (let j = 0; j < 5; j++) {
           //     <Card key={i}>{news.abstract}</Card>
           //   }}
-            <Card key={i}>{news.abstract}</Card>
-
-
+            <Card key={i}>{news}</Card>
           )
         }
       </section>
