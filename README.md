@@ -1,11 +1,11 @@
 ## React: Ejercicio con clases
 
 ### Vamos a picar código!!
-![img](../../assets/react/newsReact/code.gif)
+
 
 
 ### EJERCICIO: Página de noticias
-![img](../../assets/react/newsReact/newsmeme.jpg)
+
 
 Vamos a englobar todo lo visto estos días con un miniproyecto con React. 
 
