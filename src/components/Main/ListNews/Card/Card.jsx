@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 
 class Card extends Component {
+
+
   render() {
-    return <div>Card</div>;
+    const abstract = this.props.children
+    console.log(abstract);
+    return(
+      <div>
+        <p>{abstract}</p>
+      </div>
+    )
   }
 }
 
