@@ -4,7 +4,7 @@ class Card extends Component {
 
 
   render() {
-    const news = this.props.children
+    const news = this.props.news
     return(
       <div>
         <h4>{news.section_name}</h4>

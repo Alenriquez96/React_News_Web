@@ -18,24 +18,25 @@ class ListNews extends Component {
     this.setState({
         ListNews: data.response.docs
     })
-    console.log('componentDidMount');
-}
+  }
 
   render() {
     return (
       <section>
         {
           this.state.ListNews.map((news,i) => 
-          //  { for (let j = 0; j < 5; j++) {
-          //     <Card key={i}>{news.abstract}</Card>
-          //   }}
-            <Card key={i}>{news}</Card>
+            {if (i<5) {
+           return <Card key={i} news={news}/>
+          }}
           )
         }
+        <div id="ownNews">
+        </div>
       </section>
 
     )
   }
 }
+
 
 export default ListNews;
