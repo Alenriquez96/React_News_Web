@@ -1,25 +1,16 @@
 import React, { Component } from "react";
 
 class Form extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       lastNew:{}
-    }
-  }
 
   addNew = (e) =>{
     e.preventDefault();
 
-    const title = e.target.title.value;
-    const section = e.target.section.value;
+    const lead_paragraph = e.target.title.value;
+    const section_name = e.target.section.value;
     const abstract = e.target.abstract.value;
 
-    const newNews = {title,section,abstract};
-
-    this.setState({lastNew:newNews});
-
+    const newNews = {abstract,lead_paragraph,section_name};
+    this.props.data(newNews)
   }
 
   
@@ -32,13 +23,14 @@ class Form extends Component {
   render() {
     return ( 
       <form onSubmit={this.addNew}>
-        <label htmlFor="title">Title</label>
-        <input type="text" name="title" /><br />
         <label htmlFor="section">Section</label>
         <input type="text" name="section" /><br />
+        <label htmlFor="title">Lead paragraph</label>
+        <input type="text" name="title" /><br />
         <label htmlFor="abstract">Abstract</label>
         <input type="text" name="abstract" /><br />
-        <input type="submit" value="Submit" onClick={this.routeChage}/>
+        {/* <input type="submit" value="Submit" onClick={this.routeChage}/> */}
+        <button type="submit">Enviar</button>
       </form>
     )
   }

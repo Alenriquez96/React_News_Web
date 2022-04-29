@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "./Card";
 import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
 // require('dotenv').config();
 
 class ListNews extends Component {
@@ -14,24 +15,23 @@ class ListNews extends Component {
   async componentDidMount(){
     // const resp = await axios(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${process.env.API_KEY}`);
     const resp = await axios('https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=dPEl8ulmC9qyoMMFIpIr0uGBxezp4DMi');
-    const data = await resp.data;
+    const data = await resp.data.response.docs;
+    const dataSliced = data.slice(0,5)
     this.setState({
-        ListNews: data.response.docs
+        ListNews: dataSliced
     })
   }
 
   render() {
+    const newNews = this.props.data.newNews
+    const allNews = [...this.state.ListNews,newNews]
+    console.log(allNews);
     return (
       <section>
         {
-          this.state.ListNews.map((news,i) => 
-            {if (i<5) {
-           return <Card key={i} news={news}/>
-          }}
-          )
+          allNews.map((news)=> <Card news={news} key={uuidv4()} />)
         }
-        <div id="ownNews">
-        </div>
+        {/* <Card key={uuidv4()} news={allNews}/> */}
       </section>
 
     )
