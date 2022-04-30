@@ -9,8 +9,11 @@ class Form extends Component {
     const section_name = e.target.section.value;
     const abstract = e.target.abstract.value;
 
-    const newNews = {abstract,lead_paragraph,section_name};
-    this.props.data(newNews)
+    let newNewsList = []
+    let newNews = {abstract,lead_paragraph,section_name};
+
+    newNewsList.push(newNews);
+    this.props.data(newNewsList)
   }
 
   

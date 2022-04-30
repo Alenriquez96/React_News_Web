@@ -1,0 +1,10 @@
+@import "../utils/mixins.scss";
+
+.home{
+    @include column;
+    margin-left: auto;
+    margin-right: auto;
+}
+.home>input{
+    margin: 20px 0;
+}

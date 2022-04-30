@@ -8,7 +8,7 @@ class ListNews extends Component {
     constructor(props) {
       super(props);
       this.state={
-        ListNews: []
+        ListNews: [],
       }
   }
 
@@ -22,6 +22,14 @@ class ListNews extends Component {
     })
   }
 
+  removeNew = (i) =>{
+    const allNews = [...this.state.ListNews,...this.props.data.newNews]
+    console.log(allNews);
+    const remainingNews = allNews.filter((news,j)=>i!==j)
+    this.setState({ListNews:remainingNews})
+  }
+
+
   render() {
     const newNews = this.props.data.newNews
     const allNews = [...this.state.ListNews,newNews]
@@ -29,9 +37,8 @@ class ListNews extends Component {
     return (
       <section>
         {
-          allNews.map((news)=> <Card news={news} key={uuidv4()} />)
+          allNews.map((news,i)=> <Card news={news} remove={()=>this.removeNew(i)} key={uuidv4()} />)
         }
-        {/* <Card key={uuidv4()} news={allNews}/> */}
       </section>
 
     )

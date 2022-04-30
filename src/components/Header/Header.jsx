@@ -5,16 +5,18 @@ import {userContext} from "../../context/userContext"
 class Header extends Component {
   render() {
     return (
-      <header>
+      <header className="header">
         <Nav/>
-        <userContext.Consumer>
-          {({user}) =>
-            user?
-            <>
-              <p>Hola {user}</p>
-            </>:""
-          }
-        </userContext.Consumer>
+          <div className="user">
+            <userContext.Consumer>
+              {({user}) =>
+                user?
+                <>
+                  <p>Hola, {user}</p>
+                </>:""
+              }
+            </userContext.Consumer>
+          </div>
       </header>
     )
   }
