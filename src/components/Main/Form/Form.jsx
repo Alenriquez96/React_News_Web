@@ -26,14 +26,14 @@ class Form extends Component {
   render() {
     return ( 
       <form onSubmit={this.addNew}>
-        <label htmlFor="section">Section</label>
-        <input type="text" name="section" /><br />
-        <label htmlFor="title">Lead paragraph</label>
-        <input type="text" name="title" /><br />
-        <label htmlFor="abstract">Abstract</label>
-        <input type="text" name="abstract" /><br />
+        <label className="form__label" htmlFor="section">Section</label>
+        <input className="form__input" type="text" name="section" /><br />
+        <label className="form__label" htmlFor="title">Lead paragraph</label>
+        <input className="form__input"  type="text" name="title" /><br />
+        <label className="form__label" htmlFor="abstract">Abstract</label>
+        <input className="form__input"  type="text" name="abstract" /><br />
         {/* <input type="submit" value="Submit" onClick={this.routeChage}/> */}
-        <button type="submit">Enviar</button>
+        <button className="btn" type="submit">Enviar</button>
       </form>
     )
   }

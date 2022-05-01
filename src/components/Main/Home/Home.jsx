@@ -26,9 +26,9 @@ class Home extends Component {
   render() {
     return (
       <form onSubmit={this.login} className="home">
-        <label htmlFor="name">Introduce tu nombre:</label>
-        <input type="text" name="name"/>
-        <input type="submit" value="Login"/>
+        <label className="form__label" htmlFor="name">Introduce tu nombre:</label>
+        <input className="form__input"  type="text" name="name"/>
+        <input className="btn" type="submit" value="Login"/>
       </form>
     )
   }

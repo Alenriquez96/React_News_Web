@@ -5,9 +5,9 @@ class Nav extends Component {
   render() {
     return(
       <nav className="nav">
-        <Link to="/home" className="nav__element">Home</Link><br/>
-        <Link to="/form" className="nav__element">Form</Link><br/>
-        <Link to="/list" className="nav__element">List</Link>
+        <Link to="/home" className="nav__element">HOME</Link><br/>
+        <Link to="/form" className="nav__element">FORM</Link><br/>
+        <Link to="/list" className="nav__element">LIST</Link>
       </nav>
     )
   }

@@ -1,0 +1,9 @@
+@import "../utils/mixins.scss";
+
+main{
+    @include column;
+}
+
+.list{
+    width: 70%;
+}

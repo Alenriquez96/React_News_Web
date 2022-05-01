@@ -10,7 +10,7 @@ class Card extends Component {
         <h4>{news.section_name}</h4>
         <h3>{news.abstract}</h3>
         <p>{news.lead_paragraph}</p>
-        <button onClick={this.props.remove}>Remove New</button>
+        <button className="btn" onClick={this.props.remove}>Remove New</button>
       </div>
     )
   }

@@ -35,7 +35,7 @@ class ListNews extends Component {
     const allNews = [...this.state.ListNews,newNews]
     console.log(allNews);
     return (
-      <section>
+      <section className="list">
         {
           allNews.map((news,i)=> <Card news={news} remove={()=>this.removeNew(i)} key={uuidv4()} />)
         }
