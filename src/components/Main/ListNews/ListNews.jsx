@@ -23,7 +23,7 @@ class ListNews extends Component {
   }
 
   removeNew = (i) =>{
-    const allNews = [...this.state.ListNews,...this.props.data.newNews]
+    const allNews = [...this.state.ListNews,this.props.data.newNews]
     console.log(allNews);
     const remainingNews = allNews.filter((news,j)=>i!==j)
     this.setState({ListNews:remainingNews})
