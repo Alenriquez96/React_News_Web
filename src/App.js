@@ -14,9 +14,14 @@ function App() {
     setUser(name)
   }
 
+  const logout = ()=>{
+    setUser("")
+  }
+
   const data = {
     user,
-    login 
+    login,
+    logout 
   }
 
   return (
