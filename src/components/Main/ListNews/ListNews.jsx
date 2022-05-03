@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Card from "./Card";
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
-// require('dotenv').config();
 
 class ListNews extends Component {
     constructor(props) {
@@ -13,28 +12,25 @@ class ListNews extends Component {
   }
 
   async componentDidMount(){
-    // const resp = await axios(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${process.env.API_KEY}`);
-    const resp = await axios('https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=dPEl8ulmC9qyoMMFIpIr0uGBxezp4DMi');
+    const resp = await axios(`https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${process.env.REACT_APP_API_KEY}`);
     const data = await resp.data.response.docs;
     const dataSliced = data.slice(0,5)
+    const allNews = [...dataSliced, ...this.props.data.news]
     this.setState({
-        ListNews: dataSliced
+        ListNews: allNews
     })
+
   }
 
   removeNew = (i) =>{
-    const allNews = [...this.state.ListNews, ...this.props.data.news]
-    console.log(allNews);
-    const remainingNews = allNews.filter((news,j)=>i!==j)
+    const remainingNews = this.state.ListNews.filter((news,j)=>i!==j)
+    console.log(remainingNews);
     this.setState({ListNews:remainingNews})
   }
 
 
   render() {
-    const newNews = this.props.data.news
-    // console.log(newNews);
-    const allNews = [...this.state.ListNews,...newNews]
-    console.log(allNews);
+    const allNews = this.state.ListNews
     return (
       <section className="list">
         {
