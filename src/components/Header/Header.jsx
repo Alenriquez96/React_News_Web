@@ -9,10 +9,11 @@ class Header extends Component {
         <Nav/>
           <div className="user">
             <userContext.Consumer>
-              {({user}) =>
+              {({user, logout}) =>
                 user?
                 <>
                   <p>Hola, {user}</p>
+                  <button className="btnLogout" onClick={logout}>Logout</button>
                 </>:""
               }
             </userContext.Consumer>
